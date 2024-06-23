@@ -31,5 +31,4 @@ export const Route = createFileRoute("/_auth/dashboard/$role/")({
       </div>
     );
   },
-  beforeLoad(opts) {},
 });
