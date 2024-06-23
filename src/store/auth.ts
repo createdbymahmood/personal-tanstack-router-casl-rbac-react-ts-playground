@@ -1,3 +1,4 @@
+import { localStorageKeys } from "@/lib/constants";
 import { produce } from "immer";
 import { pick } from "lodash-es";
 import { nanoid } from "nanoid";
@@ -72,7 +73,7 @@ const storeCreator: StateCreator<AuthenticationStoreValue> = (set, get) => ({
 });
 
 const persistOptions: PersistOptions<AuthenticationStoreValue> = {
-  name: "authentication-storage", // name of item in the storage (must be unique)
+  name: localStorageKeys.auth,
   storage: createJSONStorage(() => localStorage), // (optional) by default the 'localStorage' is used
   partialize: state => pick(state, ["user"]) as AuthenticationStoreValue,
 };

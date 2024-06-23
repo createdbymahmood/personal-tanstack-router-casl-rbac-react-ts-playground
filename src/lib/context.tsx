@@ -4,6 +4,7 @@ import React, {
   useContext,
   useCallback,
   useSyncExternalStore,
+  Consumer,
 } from "react";
 
 export function createContext<Store>(initialState: Store) {
@@ -39,6 +40,8 @@ export function createContext<Store>(initialState: Store) {
 
   const StoreContext = createReactContext<UseStoreDataReturnType | null>(null);
 
+  const Consumer = StoreContext.Consumer as unknown as Consumer<Store>;
+
   function Provider({ children }: { children: React.ReactNode }) {
     return (
       <StoreContext.Provider value={useStoreData()}>
@@ -67,5 +70,6 @@ export function createContext<Store>(initialState: Store) {
   return {
     Provider,
     useStore,
+    Consumer,
   };
 }
