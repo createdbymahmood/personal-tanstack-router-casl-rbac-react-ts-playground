@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply text-foreground bg-background;
+  }
+} /**
+ * UI Initiative Material You Slider
+ *
+ * Material You Carousel made with Swiper
+ *
+ * https://uiinitiative.com
+ *
+ * Copyright 2024 UI Initiative
+ *
+ * Released under the UI Initiative Regular License
+ *
+ * January 23, 2024
+ */
+
+:root {
+  --swiper-material-scale: 1;
+  --swiper-material-slide-size: 80%;
+  --swiper-material-slide-border-radius: 8px;
+}
+
+.swiper-material-wrapper {
+  border-radius: var(--swiper-material-slide-border-radius);
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  pointer-events: auto;
+}
+
+.swiper-material-content {
+  position: absolute;
+  transform: translate3d(0, 0, 0);
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-horizontal .swiper-material-content {
+  height: 100%;
+  width: var(--swiper-material-slide-size);
+  left: calc(50% - var(--swiper-material-slide-size) / 2);
+  top: 0;
+}
+
+.swiper-vertical .swiper-material-content {
+  width: 100%;
+  height: var(--swiper-material-slide-size);
+  top: calc(50% - var(--swiper-material-slide-size) / 2);
+  left: 0;
+}
+
+/* #app {
+  height: 100%;
+  height: 100dvh;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+} */
+
+.demo-nav {
+  height: 48px;
+  background: #222;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  font-family: monospace;
+  color: #fff;
+  gap: 16px;
+  box-sizing: border-box;
+  padding: 6px 16px;
+  z-index: 10;
+}
+
+.demo-nav {
+  font-size: 12px;
+}
+
+.demo-slider {
+  /* height: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 10;
+  min-height: 0;
+}
+
+.swiper-material {
+  height: 400px;
+  width: calc(100% - 32px);
+  max-width: 800px;
+}
+
+.demo-material-image {
+  position: absolute;
+  left: 0%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--swiper-material-slide-border-radius);
+}
+
+.demo-material-label {
+  position: absolute;
+  font-size: 24px;
+  color: #fff;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  box-sizing: border-box;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  justify-content: flex-end;
+  align-items: center;
+  white-space: nowrap;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.2) 50%
+  );
+}
